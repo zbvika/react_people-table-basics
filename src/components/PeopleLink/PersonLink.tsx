@@ -1,6 +1,7 @@
 import cn from 'classnames';
 import { Person } from '../../types';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 interface Props {
   person: Person;
@@ -8,11 +9,11 @@ interface Props {
 
 export const PersonLink: React.FC<Props> = ({ person }) => {
   return (
-    <a
-      href="#/people/jan-van-brussel-1714"
+    <Link
+      to={`../${person.slug}`}
       className={cn({ 'has-text-danger': person.sex === 'f' })}
     >
       {person.name}
-    </a>
+    </Link>
   );
 };
