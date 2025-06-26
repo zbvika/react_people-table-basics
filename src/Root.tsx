@@ -3,12 +3,14 @@ import { Route, Routes } from 'react-router-dom';
 import { PeoplePage } from './components/PeoplePage';
 import { PeopleProvider } from './context/PeopleContext';
 import { App } from './App';
+import { HomePage } from './components/HomePage';
+import { NotFoundPage } from './components/NotFoundPage';
 
 export const Root = () => (
   <Router>
     <Routes>
       <Route path="/" element={<App />}>
-        <Route index element={<h1 className="title">Home Page</h1>} />
+        <Route index element={<HomePage />} />
 
         <Route path="home" element={<Navigate to="/" replace />} />
 
@@ -23,7 +25,7 @@ export const Root = () => (
           />
         </Route>
 
-        <Route path="*" element={<h1 className="title">Page not found</h1>} />
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
   </Router>

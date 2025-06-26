@@ -1,6 +1,6 @@
 import { PeopleList } from '../PeopleList';
 
-const tableHeaders: string[] = [
+const TABLE_HEADERS: string[] = [
   'Name',
   'Sex',
   'Born',
@@ -17,7 +17,7 @@ export const PeopleTable = () => {
     >
       <thead>
         <tr>
-          {tableHeaders.map(header => (
+          {TABLE_HEADERS.map(header => (
             <th key={header}>{header}</th>
           ))}
         </tr>
